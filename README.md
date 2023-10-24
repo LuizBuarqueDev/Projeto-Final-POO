@@ -14,70 +14,64 @@ Classes abstratas serão utilizadas para definir comportamentos padrão que deve
 ```mermaid
 classDiagram
   class Pessoa {
-    - nome: String
-    - cpf: String
-    - email: String
+   # nome : String
+   # cpf : String
+   # email : String 
   }
-  
-  class Funcionario {
-    - idFuncionario: int
-    - cargo: String
-  }
-  
-  class Gerente {
-    - equipe: List<Funcionario>
-  }
-  
-  class Desenvolvedor {
-    - linguagemPreferida: String
-  }
-  
-  class Departamento {
-    - nome: String
-    - funcionarios: List<Funcionario>
-  }
-  
-  class Empresa {
-    - departamentos: List<Departamento>
-  }
-  
-  class Pagamento {
+class Funcionario {
+    - idFuncionario : String
+    - cargo : String
+}
+class Desenvolvedor{
+    - especialidade : String
+}
+class Gerente {
+    - codigoSeguranca : String
+
+}
+class SocioMajoritario {
+    - parteDaEmpresa : float 
+}
+class Departamento {
+    - nome : String
+    - funcionarios List<Funcionario>
+}
+class Empresa{
+    - cnpj : String
+    - departamentos : List<Departamento>
+}
+class RealizarPagamento {
     <<abstract>>
-    - calcularPagamento(): double
-  }
-  
-  class SalarioMensal {
-    - salarioFixo: double
-    + calcularPagamento(): double
-  }
-  
-  class SalarioPorHora {
+    + calcularSalario() : double
+}
+class SalarioMesal{
+    - salarioFixo : double
+    + calcularSalario() : double
+}
+class SalarioPorHora {
     - horasTrabalhadas: int
     - taxaPorHora: double
-    + calcularPagamento(): double
-  }
-  
-  class Relatorio {
-    + gerarRelatorio(): void
-  }
-  
-  class Main {
-    + main(args: String[]): void
-  }
-  
-  class BancoDeDados {
-    - armazenarInformacoes(): void
-    - recuperarInformacoes(): void
-  }
+    + calcularSalario() : double
+}
+class BancoDeDados{
+    - lerBanco() : void
+    - gravarBanco(): void 
+}
+class Firewall{
+    - verificarId() : void
+}
 
-  Pessoa <|-- Funcionario
-  Funcionario <|-- Gerente
-  Funcionario <|-- Desenvolvedor
-  Funcionario *-- Departamento
-  Departamento *-- Empresa
-  Pagamento <|-- SalarioMensal
-  Pagamento <|-- SalarioPorHora
-  Funcionario --|> Pagamento
-  Main --> Empresa
-  Main --> Relatorio
-  Main --> BancoDeDados
+Pessoa <|-- Funcionario
+Funcionario <|-- Gerente
+Funcionario <|-- SocioMajoritario
+Funcionario <|-- Desenvolvedor
+
+Departamento "N"--> "N"Funcionario
+Empresa "1"-->"N" Departamento
+RealizarPagamento <|-- SalarioMesal
+RealizarPagamento <|-- SalarioPorHora
+Funcionario --o SalarioMesal
+Funcionario --o SalarioPorHora
+Desenvolvedor --o Firewall
+Firewall --o BancoDeDados
+
