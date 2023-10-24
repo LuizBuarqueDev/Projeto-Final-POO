@@ -9,3 +9,75 @@ Cada classe no sistema terá uma função específica e será projetada para cum
 A herança será utilizada para estabelecer relações entre classes, promovendo a reutilização de código e a organização hierárquica das funcionalidades do sistema.
 Além disso, o conceito de polimorfismo será aplicado para permitir que objetos de diferentes classes possam ser tratados de maneira uniforme, simplificando o código e tornando-o mais flexível. 
 Classes abstratas serão utilizadas para definir comportamentos padrão que devem ser implementados por subclasses, garantindo uma estrutura coerente no sistema.
+
+## Diagrama de classes
+```mermaid
+classDiagram
+  class Pessoa {
+    - nome: String
+    - cpf: String
+    - email: String
+  }
+  
+  class Funcionario {
+    - idFuncionario: int
+    - cargo: String
+  }
+  
+  class Gerente {
+    - equipe: List<Funcionario>
+  }
+  
+  class Desenvolvedor {
+    - linguagemPreferida: String
+  }
+  
+  class Departamento {
+    - nome: String
+    - funcionarios: List<Funcionario>
+  }
+  
+  class Empresa {
+    - departamentos: List<Departamento>
+  }
+  
+  class Pagamento {
+    <<abstract>>
+    - calcularPagamento(): double
+  }
+  
+  class SalarioMensal {
+    - salarioFixo: double
+    + calcularPagamento(): double
+  }
+  
+  class SalarioPorHora {
+    - horasTrabalhadas: int
+    - taxaPorHora: double
+    + calcularPagamento(): double
+  }
+  
+  class Relatorio {
+    + gerarRelatorio(): void
+  }
+  
+  class Main {
+    + main(args: String[]): void
+  }
+  
+  class BancoDeDados {
+    - armazenarInformacoes(): void
+    - recuperarInformacoes(): void
+  }
+
+  Pessoa <|-- Funcionario
+  Funcionario <|-- Gerente
+  Funcionario <|-- Desenvolvedor
+  Funcionario *-- Departamento
+  Departamento *-- Empresa
+  Pagamento <|-- SalarioMensal
+  Pagamento <|-- SalarioPorHora
+  Funcionario --|> Pagamento
+  Main --> Empresa
+  Main --> Relatorio
+  Main --> BancoDeDados
