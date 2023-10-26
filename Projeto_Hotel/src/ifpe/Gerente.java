@@ -6,7 +6,7 @@ public class Gerente extends Funcionario{
 
 	public Gerente(String nome, String cpf, String email, String idFuncionario, String cargo,
 			String codigoDeSeguranca) {
-		super(nome, cpf, email, idFuncionario, cargo);
+		super(nome, cpf, email, idFuncionario);
 		this.codigoDeSeguranca = codigoDeSeguranca;
 	}
 

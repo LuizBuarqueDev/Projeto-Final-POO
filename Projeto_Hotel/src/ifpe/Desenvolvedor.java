@@ -2,11 +2,11 @@ package ifpe;
 
 public class Desenvolvedor extends Funcionario{
 	 private String especialidade;
-	 private String usuarioBD;
-	 private String senhaBD;
+	 private String usuarioBD = "adm";
+	 private String senhaBD = "senha";
 	public Desenvolvedor(String nome, String cpf, String email, String idFuncionario, String cargo,
 			String especialidade, String usuarioBD, String senhaBD) {
-		super(nome, cpf, email, idFuncionario, cargo);
+		super(nome, cpf, email, idFuncionario);
 		this.especialidade = especialidade;
 		this.usuarioBD = usuarioBD;
 		this.senhaBD = senhaBD;
