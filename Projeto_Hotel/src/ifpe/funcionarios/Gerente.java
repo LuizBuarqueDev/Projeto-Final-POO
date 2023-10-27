@@ -1,4 +1,4 @@
-package ifpe;
+package ifpe.funcionarios;
 
 public class Gerente extends Funcionario{
 	

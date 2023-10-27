@@ -1,11 +1,17 @@
-package ifpe;
+package ifpe.sistemas;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BancoDeDados {
 	
 	private List<String> banco;
-	
+		
+	public BancoDeDados() {
+		super();
+		banco = new ArrayList<String>();
+	}
+
 	public String ler() {
 		return "BancoDeDados [banco=" + banco + "]";
 	}
@@ -13,9 +19,4 @@ public class BancoDeDados {
 	public void gravar(String entrada) {
 		 banco.add(entrada);
 	}
-	
-	
-	
-	
-
 }
