@@ -17,4 +17,12 @@ public class Funcionario extends Pessoa{
 	public void setIdFuncionario(String idFuncionario) {
 		this.idFuncionario = idFuncionario;
 	}
+
+	public String getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
 }

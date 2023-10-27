@@ -19,5 +19,7 @@ public class Main {
 		
 		firewall.AdicionarAoBanco("Teste");
 		firewall.lerBanco();
+		
+		System.out.println(desenvolvedor.getCargo());
 	}
 }

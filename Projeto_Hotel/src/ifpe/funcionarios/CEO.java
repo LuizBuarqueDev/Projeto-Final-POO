@@ -1,10 +1,10 @@
 package ifpe.funcionarios;
 
-public class CEO {
+public class CEO  extends Funcionario{
 	private float parteDaEmpresa;
 
-	public CEO(float parteDaEmpresa) {
-		super();
+	public CEO(String nome, String cpf, String email, String idFuncionario, float parteDaEmpresa) {
+		super(nome, cpf, email, idFuncionario);
 		this.parteDaEmpresa = parteDaEmpresa;
 	}
 
