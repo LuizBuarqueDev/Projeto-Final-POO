@@ -19,59 +19,44 @@ classDiagram
    # email : String 
   }
 class Funcionario {
-    - idFuncionario : String
-    - cargo : String
-}
+    # idFuncionario : String
+    # cargo : String 
+ }
 class Desenvolvedor{
-    - especialidade : String
-}
+    - espacialidade : String
+    - usuarioBD : String
+    - senhaDB : String
+ }
 class Gerente {
-    - codigoSeguranca : String
-
-}
-class SocioMajoritario {
-    - parteDaEmpresa : float 
-}
+    - codigoDeSeguranca : String
+ }
+class CEO {
+    - parteNaEmpresa : float
+ }
 class Departamento {
     - nome : String
-    - funcionarios List<Funcionario>
-}
+    - funcionarios : List <Funcionario>
+ }
 class Empresa{
     - cnpj : String
-    - departamentos : List<Departamento>
-}
-class RealizarPagamento {
-    <<abstract>>
-    + calcularSalario() : double
-}
-class SalarioMesal{
-    - salarioFixo : double
-    + calcularSalario() : double
-}
-class SalarioPorHora {
-    - horasTrabalhadas: int
-    - taxaPorHora: double
-    + calcularSalario() : double
-}
+    - departamentos : List <Departamento>
+ }
 class BancoDeDados{
-    - lerBanco() : void
-    - gravarBanco(): void 
-}
+    - banco : List<String>
+ }
 class Firewall{
-    - verificarId() : void
-}
+    - desenvolvedor : Desenvolvedor
+    - bancoDeDados :  BancoDeDados
+ }
 
-Pessoa <|-- Funcionario
-Funcionario <|-- Gerente
-Funcionario <|-- SocioMajoritario
-Funcionario <|-- Desenvolvedor
+ Pessoa <|-- Funcionario
+ Funcionario <|-- CEO 
+ Funcionario <|-- Desenvolvedor
+ Funcionario <|-- Gerente
 
-Departamento "N"--> "N"Funcionario
-Empresa "1"-->"N" Departamento
-RealizarPagamento <|-- SalarioMesal
-RealizarPagamento <|-- SalarioPorHora
-Funcionario --o SalarioMesal
-Funcionario --o SalarioPorHora
-Desenvolvedor --o Firewall
-Firewall --o BancoDeDados
+ Funcionario <-- Departamento
+ Departamento <-- Empresa
+ Desenvolvedor <-- Firewall
+ BancoDeDados <-- Firewall
+
 
