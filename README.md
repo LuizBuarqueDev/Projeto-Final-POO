@@ -9,3 +9,56 @@ Cada classe no sistema terá uma função específica e será projetada para cum
 A herança será utilizada para estabelecer relações entre classes, promovendo a reutilização de código e a organização hierárquica das funcionalidades do sistema.
 Além disso, o conceito de polimorfismo será aplicado para permitir que objetos de diferentes classes possam ser tratados de maneira uniforme, simplificando o código e tornando-o mais flexível. 
 Classes abstratas serão utilizadas para definir comportamentos padrão que devem ser implementados por subclasses, garantindo uma estrutura coerente no sistema.
+
+```mermaid
+classDiagram
+  class Pessoa {
+    - nome : String
+    -  rg : String
+  }
+  class Cliente{
+    - quantidadeOcupacoes : int
+    + calcularOcupacoes(): int 
+  }
+
+  class Funcionario {
+    - setor : String
+  }
+
+  class Endereco {
+    - estado : String
+    - cidade : String 
+    - bairro : String
+    - rua : String
+    - numero : String
+    - cep : String
+  }
+  class Telefone{
+    - ddd : String
+    - numero : String
+  }
+  class Reserva {
+    - data : String
+  }
+  class Quarto {
+    - tipo : String
+    - estado : boolean
+    - numeroQuarto : int
+  }
+  class Cama {
+    - tipo : String
+  }
+
+  class Hotel {
+    - nome : String
+  }
+
+  Pessoa <|-- Cliente
+  Pessoa <|-- Funcionario
+  Endereco "1"<-- "1"Pessoa
+  Telefone "1"<-- "1"Pessoa
+  Cliente "1"<-- "N"Reserva
+  Funcionario "1"<-- "N"Reserva
+  Quarto "N"<-- "N"Reserva
+  Cama "1"<-- "1"Quarto
+  Reserva "N" <-- "1" Hotel
