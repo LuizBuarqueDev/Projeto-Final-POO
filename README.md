@@ -12,10 +12,12 @@ Classes abstratas serão utilizadas para definir comportamentos padrão que deve
 
 ```mermaid
 classDiagram
-  class Pessoa {
+   class PessoaFisica {
+    <<abstract>>
     - nome : String
-    -  rg : String
+    - rg : String
   }
+  
   class Cliente{
     - quantidadeOcupacoes : int
     + calcularOcupacoes(): int 
@@ -25,26 +27,31 @@ classDiagram
     - setor : String
   }
 
+  class Gerente {
+    - codigoDeAcesso : String
+  }
+
   class Endereco {
-    - estado : String
     - cidade : String 
     - bairro : String
     - rua : String
     - numero : String
-    - cep : String
   }
+  
   class Telefone{
     - ddd : String
     - numero : String
   }
+  
   class Reserva {
     - data : String
   }
+  
   class Quarto {
-    - tipo : String
     - estado : boolean
     - numeroQuarto : int
   }
+  
   class Cama {
     - tipo : String
   }
@@ -52,13 +59,28 @@ classDiagram
   class Hotel {
     - nome : String
   }
+  
+  class Servico {
+    - descricao : String
+    - custo : double
+  }
+  
+  class Pagamento {
+    - metodo : String
+    - valor : double
+  }
 
-  Pessoa <|-- Cliente
-  Pessoa <|-- Funcionario
-  Endereco "1"<-- "1"Pessoa
-  Telefone "1"<-- "1"Pessoa
+  PessoaFisica <|-- Cliente
+  PessoaFisica <|-- Funcionario
+  PessoaFisica <|-- Gerente
+  
+  Endereco "1" <-- "1" Hotel
+  Endereco "1"<-- "1"PessoaFisica
+  Telefone "1"<-- "1"PessoaFisica
   Cliente "1"<-- "N"Reserva
   Funcionario "1"<-- "N"Reserva
   Quarto "N"<-- "N"Reserva
   Cama "1"<-- "1"Quarto
   Reserva "N" <-- "1" Hotel
+  Hotel "1" --> "N" Servico
+  Cliente "1" <-- "1" Pagamento
