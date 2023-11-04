@@ -1,0 +1,19 @@
+package ifpe.sistemas;
+
+import java.util.List;
+
+public class BancoDeDados {
+	
+	private List<String> banco;
+		
+	public BancoDeDados() {
+	}
+
+	public String ler() {
+		return "BancoDeDados [banco=" + banco + "]";
+	}
+	
+	public void gravar(String entrada) {
+		 banco.add(entrada);
+	}
+}

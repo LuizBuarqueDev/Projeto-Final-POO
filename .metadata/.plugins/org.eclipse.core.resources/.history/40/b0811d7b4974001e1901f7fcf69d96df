@@ -1,0 +1,19 @@
+package ifpe;
+
+public class Firewall {
+	
+	private Desenvolvedor desenvolvedor;
+	private BancoDeDados bancoDeDados;
+	private boolean usuarioAutenticado;
+	
+	public Firewall(BancoDeDados bancoDeDados, boolean usuarioAutenticado) {
+		super();
+		this.bancoDeDados = bancoDeDados;
+		this.usuarioAutenticado = usuarioAutenticado;
+	}
+	String usuario = desenvolvedor.getUsuarioBD();
+	String senha = desenvolvedor.getSenhaBD();
+	
+	public void autenticar(String usuario , String senha) {
+	}
+}

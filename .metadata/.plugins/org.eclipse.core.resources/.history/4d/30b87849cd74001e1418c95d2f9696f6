@@ -1,0 +1,8 @@
+package ifpe.sistemas;
+
+public class Departamento {
+	private String nome; 
+	private List<Fu>
+	
+
+}
