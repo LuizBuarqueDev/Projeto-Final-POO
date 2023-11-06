@@ -1,4 +1,4 @@
-package ifpe.Pessoas;
+package ifpe;
 
 import ifpe.sistema.Pagamento;
 
