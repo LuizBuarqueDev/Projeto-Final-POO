@@ -5,10 +5,10 @@ import ifpe.sistema.Telefone;
 
 public abstract class PessoaFisica {
 	
-	private String nome;
-	private String rg;
-	private Endereco endereco;
-	private Telefone telefone;
+	protected String nome;
+	protected String rg;
+	protected String endereco;
+	protected Telefone telefone;
 	
 	public PessoaFisica() {
 		// TODO Auto-generated constructor stub
