@@ -1,6 +1,6 @@
-package ifpe.Pessoas;
+package hotel.pessoas;
 
-public class Gerente extends PessoaFisica{
+public class Gerente extends Pessoa{
 	
 	private  String codigoDeAcesso;
 

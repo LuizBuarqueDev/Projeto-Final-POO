@@ -1,4 +1,4 @@
-package ifpe.sistema;
+package hotel.sistemas;
 
 public class Endereco {
 	

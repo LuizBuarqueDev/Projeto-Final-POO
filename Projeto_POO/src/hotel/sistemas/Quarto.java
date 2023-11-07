@@ -1,4 +1,4 @@
-package ifpe.sistema;
+package hotel.sistemas;
 
 public class Quarto {
 	// TODO: Atribuir e implementar estado : boolean

@@ -1,9 +1,9 @@
-package ifpe.sistema;
+package hotel.sistemas;
 
 import java.util.List;
 
-import ifpe.Pessoas.Cliente;
-import ifpe.Pessoas.Funcionario;
+import hotel.pessoas.Cliente;
+import hotel.pessoas.Funcionario;
 
 public class Reserva {
 	

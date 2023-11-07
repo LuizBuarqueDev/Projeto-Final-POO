@@ -1,8 +1,8 @@
-package ifpe;
+package hotel.pessoas;
 
-import ifpe.sistema.Pagamento;
+import hotel.sistemas.Pagamento;
 
-public class Cliente extends PessoaFisica{
+public class Cliente extends Pessoa{
 	
 	private int quantidadeDeOcupacoes;
 	private Pagamento pagamento;

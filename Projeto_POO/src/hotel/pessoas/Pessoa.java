@@ -1,20 +1,20 @@
-package ifpe.Pessoas;
+package hotel.pessoas;
 
-import ifpe.sistema.Endereco;
-import ifpe.sistema.Telefone;
+import hotel.sistemas.Endereco;
+import hotel.sistemas.Telefone;
 
-public abstract class PessoaFisica {
+public abstract class Pessoa {
 	
 	protected String nome;
 	protected String rg;
-	protected String endereco;
+	protected Endereco endereco;
 	protected Telefone telefone;
 	
-	public PessoaFisica() {
+	public Pessoa() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public PessoaFisica(String nome, String rg, Endereco endereco, Telefone telefone) {
+
+	public Pessoa(String nome, String rg, Endereco endereco, Telefone telefone) {
 		super();
 		this.nome = nome;
 		this.rg = rg;

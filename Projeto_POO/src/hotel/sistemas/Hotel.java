@@ -1,4 +1,4 @@
-package ifpe.sistema;
+package hotel.sistemas;
 
 import java.util.List;
 

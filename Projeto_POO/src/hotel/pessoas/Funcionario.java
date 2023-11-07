@@ -1,4 +1,4 @@
-package ifpe.Pessoas;
+package hotel.pessoas;
 
 public class Funcionario {
 	
