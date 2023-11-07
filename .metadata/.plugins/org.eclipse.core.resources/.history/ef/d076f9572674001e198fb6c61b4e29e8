@@ -1,8 +1,0 @@
-package ifpe;
-
-public class Firewall {
-	
-	public void verificarCodigoSeguranca() {
-		
-	}
-}

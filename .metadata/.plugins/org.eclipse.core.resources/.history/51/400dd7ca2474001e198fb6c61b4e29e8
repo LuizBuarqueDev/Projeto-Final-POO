@@ -1,7 +1,0 @@
-package ifpe;
-
-public class Firewall {
-	public void teste() {
-		
-	}
-}

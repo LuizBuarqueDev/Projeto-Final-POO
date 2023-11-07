@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+D:\githhub\Projeto-Final-POO\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
-1696264553.index
-2721031749.index
