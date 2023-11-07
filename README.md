@@ -19,6 +19,7 @@ classDiagram
   }
   
   class Cliente{
+    - email : String
   }
 
   class Funcionario {
